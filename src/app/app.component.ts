@@ -21,7 +21,11 @@ export class AppComponent {
   selectedEmployee: Employee = new Employee();
 
   openForEdit(employee: Employee) {
-    this.selectedEmployee = employee;
+    if (this.selectedEmployee === employee) {
+      this.selectedEmployee = new Employee();
+    } else {
+      this.selectedEmployee = employee;
+    }
   }
 
   addOrEdit() {
